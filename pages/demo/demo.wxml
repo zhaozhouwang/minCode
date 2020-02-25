@@ -1,0 +1,43 @@
+<!--pages/demo/demo.wxml-->
+<view class="oneDemo" data-name="A" hidden="{{flag}}">
+  {{message}}
+</view>
+
+<!-- wx:for 为循环方法。items是在该页面json文件中定义的变量名称  cell为ltems内的单个值  index为索引 -->
+<!-- block 是包装标签 -->
+<!-- <view class="oneDemo">
+  <block wx:for="{{items}}" wx:for-item="cell" wx:key="index">
+    <view>
+      {{index+1}}:{{cell.name}}
+    </view>
+  </block>
+
+  <view>
+    今天吃什麽？
+  </view>
+  <view wx:if="{{condition === 1}}">
+    饺子
+  </view>
+  <view wx:elif="{{condition === 2}}">
+    面条
+  </view>
+  <view wx:else>
+    其他
+  </view>
+</view> -->
+
+<view>
+  <template name="demoTemplate">
+    <view class="oneDemo">
+      <view>姓名: {{name}} </view>
+      <view>年龄: {{age}} </view>
+      <view>电话: {{mobile}} </view>
+    </view>
+  </template>
+</view>
+
+
+<template is="demoTemplate" data="{{...userInfo}}"></template>
+
+
+<!-- import 引入目标wxml里的指定模板代码 include引入目标wxml里除了模板代码外的其他代码 -->
